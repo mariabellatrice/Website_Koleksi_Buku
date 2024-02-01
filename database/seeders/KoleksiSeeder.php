@@ -18,7 +18,7 @@ class KoleksiSeeder extends Seeder
             'pengarang' => "Leila S. Chudori",
             'genre' => "Fiksi",
             'harga' => '109000',
-            'gambar' => 'Laut-bercerita.jpeg'
+            'gambar' => 'Laut-bercerita.jpg'
         ]);
 
         DB::table('koleksi')->insert([
@@ -26,7 +26,7 @@ class KoleksiSeeder extends Seeder
             'pengarang' => "Tere Liye",
             'genre' => "Fiksi",
             'harga' => '99000',
-            'gambar' => 'Negeri-para-bedebah.jpeg'
+            'gambar' => 'Negeri-para-bedebah.jpg'
         ]);
     }
 }

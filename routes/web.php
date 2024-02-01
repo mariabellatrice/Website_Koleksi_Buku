@@ -35,7 +35,7 @@ Route::get('koleksi/tambah', function () {
         'pengarang' => "Ziggy Zezsyazeoviennazabrizkie",
         'genre' => "Fiksi",
         'harga' => '88000',
-        'gambar' => 'Di-tanah-lada.jpeg'
+        'gambar' => 'Di-tanah-lada.jpg'
     ]);
     echo "<h2><b> Koleksi Telah Berhasil Ditambahkan. Silahkan Kembali Ke .../koleksi/semua </b></h2>";
 });
@@ -46,7 +46,7 @@ Route::get('koleksi/update/{id}', function ($id) {
         'pengarang' => "Ziggy Zezsyazeoviennazabrizkie",
         'genre' => "Fiksi",
         'harga' => '88000',
-        'gambar' => 'Di-tanah-lada.jpeg'
+        'gambar' => 'Di-tanah-lada.jpg'
     ]);
     echo "<h2><b> Koleksi Telah Berhasil Di-update. Silahkan Kembali Ke .../koleksi/semua </b></h2>";
 });
