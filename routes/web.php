@@ -50,3 +50,8 @@ Route::get('koleksi/update/{id}', function ($id) {
     ]);
     echo "<h2><b> Koleksi Telah Berhasil Di-update. Silahkan Kembali Ke .../koleksi/semua </b></h2>";
 });
+
+Route::get('koleksi/hapus/{id}', function ($id) {
+    koleksi::find($id)->delete();
+    echo "<h2><b> Koleksi Telah Berhasil Dihapus. Silahkan Kembali Ke .../koleksi/semua </b></h2>";
+});
