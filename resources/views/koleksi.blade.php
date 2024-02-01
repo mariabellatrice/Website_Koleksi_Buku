@@ -26,4 +26,5 @@
     	</tr>
     	@endforeach
 
-	</table>
+	</table> <br>
+    <button type="submit"><a href="{{route('koleksi.create')}}" > Tambah Koleksi </a></button>
