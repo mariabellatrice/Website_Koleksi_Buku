@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Koleksi;
+use App\Http\Controllers\KoleksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,17 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('koleksi/semua', function () {
-    $koleksi = Koleksi::all();
-    foreach ($koleksi as $data) {
-     echo $data->gambar . "<br><br>";
-    echo  $data->id . ". " . $data->judul_buku . "<br>";
-    echo "Pengarang:  $data->pengarang <br>";
-    echo "Gnere: $data->genre <br>";
-    echo "Harga: $data->harga <br><br>";
-    }
-});
+Route::resource('koleksi', KoleksiController::class);
 
+/*
 Route::get('koleksi/tambah', function () {
     Koleksi::create([
         'judul_buku' => "Di Tanah Lada",
@@ -55,3 +48,4 @@ Route::get('koleksi/hapus/{id}', function ($id) {
     koleksi::find($id)->delete();
     echo "<h2><b> Koleksi Telah Berhasil Dihapus. Silahkan Kembali Ke .../koleksi/semua </b></h2>";
 });
+*/

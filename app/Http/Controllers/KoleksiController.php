@@ -6,15 +6,59 @@ use Illuminate\Http\Request;
 
 class KoleksiController extends Controller
 {
-    public function semua()
-   	 {
-        $kategori = koleksii::all();
-        foreach ($koleksi as $data) {
-            echo $data->gambar . "<br><br>";
-            echo  $data->id . ". " . $data->judul_buku . "<br>";
-            echo "Pengarang:  $data->pengarang <br>";
-            echo "Gnere: $data->genre <br>";
-            echo "Harga: $data->harga <br><br>";
-       	    }
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        //
     }
 }
