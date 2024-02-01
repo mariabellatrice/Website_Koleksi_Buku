@@ -21,7 +21,7 @@ class KoleksiController extends Controller
      */
     public function create()
     {
-        //
+        return view('tambahkoleksi');
     }
 
     /**
@@ -29,7 +29,15 @@ class KoleksiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        koleksi::create([
+            'judul_buku' => $request->judul_buku,
+            'pengarang' => $request->pengarang,
+            'genre' => $request->genre,
+            'harga' => $request->harga,
+            'gambar' => $request->gambar,
+        ]);
+
+        return redirect()->route('koleksi.index');
     }
 
     /**
