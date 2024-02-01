@@ -18,7 +18,11 @@
         <td>{{$data->genre}}</td>
         <td>{{$data->pengarang}}</td>
         <td></td>
-        <td></td>
+        <td><form action="{{route('koleksi.destroy', $data->id)}}" method="post">
+                @csrf @method('delete')
+                <button type="submit">Hapus</button>
+            </form>
+        </td>
     	</tr>
     	@endforeach
 

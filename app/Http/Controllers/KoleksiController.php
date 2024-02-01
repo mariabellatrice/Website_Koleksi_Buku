@@ -77,6 +77,7 @@ class KoleksiController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        koleksi::find($id)->delete();
+        return redirect()->route('koleksi.index');
     }
 }
