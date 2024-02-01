@@ -9,5 +9,5 @@ class Koleksi extends Model
 {
     protected $table = 'koleksi';
 	protected $primarykey = 'id';
-	protected $fillable = ['judul_buku', "sinopsis", 'pengarang', 'genre', 'harga', 'gambar'];
+	protected $fillable = ['judul_buku', 'pengarang', 'genre', 'harga', 'gambar'];
 }
