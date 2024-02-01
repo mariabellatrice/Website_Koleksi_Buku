@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('judul_buku', 100);
             $table->string('pengarang', 100);
             $table->string('genre', 50);
-            $table->integer("harga");
+            $table->decimal("harga", 6, 3);
             $table->text('gambar');
             $table->timestamps();
         });
