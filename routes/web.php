@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Kategori;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('koleksi/semua', function () {
+    $koleksi = Koleksi::all();
+    foreach ($koleksi as $data) {
+     echo $data->gambar . "<br><br>";
+    echo  $data->id . ". " . $data->judul_buku . "<br>";
+    echo "Pengarang:  $data->pengarang . <br>";
+    echo "Gnere: $data->genre . <br>";
+    echo "Harga: $data->harga . <br><br>";
+    }
 });
