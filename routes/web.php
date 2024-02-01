@@ -39,3 +39,14 @@ Route::get('koleksi/tambah', function () {
     ]);
     echo "<h2><b> Koleksi Telah Berhasil Ditambahkan. Silahkan Kembali Ke .../koleksi/semua </b></h2>";
 });
+
+Route::get('koleksi/update/{id}', function ($id) {
+    koleksi::find($id)->update ([
+        'judul_buku' => "Di Tanah Lada",
+        'pengarang' => "Ziggy Zezsyazeoviennazabrizkie",
+        'genre' => "Fiksi",
+        'harga' => '88000',
+        'gambar' => 'Di-tanah-lada.jpeg'
+    ]);
+    echo "<h2><b> Koleksi Telah Berhasil Di-update. Silahkan Kembali Ke .../koleksi/semua </b></h2>";
+});
