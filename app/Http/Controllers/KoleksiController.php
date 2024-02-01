@@ -53,7 +53,8 @@ class KoleksiController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $koleksi = Koleksi::find($id);
+        return view('editkoleksi', ['koleksi'=>$koleksi]);
     }
 
     /**
@@ -61,7 +62,14 @@ class KoleksiController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        koleksi::find($id)->update([
+            'judul_buku' => $request->judul_buku,
+            'pengarang' => $request->pengarang,
+            'genre' => $request->genre,
+            'harga' => $request->harga,
+            'gambar' => $request->gambar,
+        ]);
+        return redirect()->route('koleksi.index');
     }
 
     /**
