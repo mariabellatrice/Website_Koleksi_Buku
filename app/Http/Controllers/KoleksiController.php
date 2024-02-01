@@ -45,7 +45,8 @@ class KoleksiController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $koleksi = Koleksi::find($id);
+        return view('detailkoleksi', ['koleksi' => $koleksi]);
     }
 
     /**

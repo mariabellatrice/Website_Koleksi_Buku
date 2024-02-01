@@ -17,8 +17,13 @@
         <td>{{$data->judul_buku}}</td>
         <td>{{$data->genre}}</td>
         <td>{{$data->pengarang}}</td>
-        <td></td>
-        <td><form action="{{route('koleksi.destroy', $data->id)}}" method="post">
+        
+        <td> <form action="{{route('koleksi.show', $data->id)}}" method="get">
+                <button type="submit"> Lihat Detail</button>
+            </form>
+        </td>
+
+        <td> <form action="{{route('koleksi.destroy', $data->id)}}" method="post">
                 @csrf @method('delete')
                 <button type="submit">Hapus</button>
             </form>
