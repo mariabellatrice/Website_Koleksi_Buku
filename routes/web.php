@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Kategori;
+use App\Models\Koleksi;
 
 /*
 |--------------------------------------------------------------------------
