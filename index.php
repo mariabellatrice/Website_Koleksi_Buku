@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Cek apakah pengguna sudah login
+// Untuk mengecek apakah pengguna sudah login
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: login.html");
     exit;
