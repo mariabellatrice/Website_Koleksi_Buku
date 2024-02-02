@@ -1,0 +1,29 @@
+<?php
+session_start();
+
+// Untuk mengecek apakah form telah di-submit
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Dummy credentials (untuk keperluan contoh)
+    $valid_username = "admin";
+    $valid_password = "password";
+
+    // Untuk Mengambil data dari form
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    // Untuk mengecek apakah username dan password cocok
+    if ($username == $valid_username && $password == $valid_password) {
+        // Simpan status login ke dalam session
+        $_SESSION["loggedin"] = true;
+        $_SESSION["username"] = $username;
+
+        // Redirect ke halaman utama jika login berhasil
+        header("location: index.php");
+        exit;
+    } else {
+        // Redirect ke halaman login jika login gagal
+        header("location: login.html");
+        exit;
+    }
+}
+?>
