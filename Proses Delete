@@ -1,0 +1,39 @@
+<?php
+session_start();
+
+// Untuk mengecek apakah pengguna sudah login
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("location: login.html");
+    exit;
+}
+
+// Include file koneksi database
+require_once "koneksi.php";
+
+// Untuk mengecek apakah parameter id buku telah diterima
+if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
+    // menyiapkan pernyataan hapus
+    $sql = "DELETE FROM books WHERE id = ?";
+
+    if($stmt = $mysqli->prepare($sql)){
+        // Bind parameter id buku ke pernyataan
+        $stmt->bind_param("i", $param_id);
+
+        // Set parameter id buku
+        $param_id = trim($_GET["id"]);
+
+        // Mencoba mengeksekusi pernyataan
+        if($stmt->execute()){
+            // Redirect ke halaman utama
+            header("location: index.php");
+            exit();
+        } else{
+            echo "Oops! Terjadi kesalahan. Silakan coba lagi nanti.";
+        }
+    }
+
+    $stmt->close();
+}
+
+$mysqli->close();
+?>
