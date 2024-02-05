@@ -1,7 +1,7 @@
 <h2>Detail Koleksi</h2>
 
     <div>
-        <p align="center"> <img src=public/> {{$koleksi->gambar}} </p> <br> 
+        <p align="center"> <img src"{{url('/public/'.$data->gambar)}} alt"/> {{$koleksi->gambar}} </p> <br> 
         <p> <b>Judul Buku : </b> {{$koleksi->judul_buku}} </p>
         <p> <b>Pengarang : </b> {{$koleksi->pengarang}}</p>
         <p> <b>Genre : </b> {{$koleksi->genre}}</p>
